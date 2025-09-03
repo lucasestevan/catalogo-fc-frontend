@@ -49,7 +49,7 @@ export default function AdminPanel() {
   const handleAddVendedor = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${API_URL}/admin/vendedores`, 
+      await axios.post(`${API_URL}/admin/vendedores`,
         { nome: vendedorNome, email: vendedorEmail, senha: vendedorSenha },
         { headers: { Authorization: `Bearer ${token}` } }
       );
