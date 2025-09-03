@@ -13,7 +13,7 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${API_URL}/login/vendedor`, { email, senha });
+      await axios.post(`${API_URL}/api/login/vendedor`, { email, senha });
       router.push('/catalogo'); // Redireciona para o catálogo após o login
     } catch (err) {
       setError('Email ou senha inválidos.');

@@ -12,7 +12,7 @@ export default function Catalogo() {
   useEffect(() => {
     async function fetchTimes() {
       try {
-        const response = await axios.get(`${API_URL}/times`);
+        const response = await axios.get(`${API_URL}/api/times`);
         setTimes(response.data);
       } catch (err) {
         setError('Não foi possível carregar o catálogo. Tente novamente mais tarde.');

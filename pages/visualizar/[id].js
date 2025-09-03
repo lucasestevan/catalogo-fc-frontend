@@ -15,7 +15,7 @@ export default function VisualizarTime() {
     if (id) {
       async function fetchImages() {
         try {
-          const response = await axios.get(`${API_URL}/visualizar/${id}`);
+          const response = await axios.get(`${API_URL}/api/visualizar/${id}`);
           setImageUrls(response.data);
         } catch (err) {
           setError('Não foi possível carregar as imagens do time.');
