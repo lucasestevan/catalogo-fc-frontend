@@ -17,7 +17,7 @@ export default function LoginPage() {
     setError('');
 
     try {
-      await axios.post(`${API_URL}/api/login/vendedor`, { email, senha });
+      await axios.post(`${API_URL}/login/vendedor`, { email, senha });
       // Se o login for bem-sucedido, redireciona para o catálogo
       router.push('/catalogo');
     } catch (err) {

@@ -31,7 +31,7 @@ export default function AdminPanel() {
   const handleAdminLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${API_URL}/api/admin/login`, { email, senha });
+      const response = await axios.post(`${API_URL}/admin/login`, { email, senha });
       const { token } = response.data;
       localStorage.setItem('admin-token', token); // Salva o token
       setToken(token);
@@ -49,7 +49,7 @@ export default function AdminPanel() {
   const handleAddVendedor = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${API_URL}/api/admin/vendedores`, 
+      await axios.post(`${API_URL}/admin/vendedores`, 
         { nome: vendedorNome, email: vendedorEmail, senha: vendedorSenha },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -63,7 +63,7 @@ export default function AdminPanel() {
   const handleAddTime = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${API_URL}/api/admin/times`,
+      await axios.post(`${API_URL}/admin/times`,
         { nome_time: timeNome, link_fotos: timeLink, url_escudo: timeEscudo },
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -13,7 +13,7 @@ export default function VisualizadorPage() {
 
   useEffect(() => {
     if (id) { // Garante que o ID já está disponível
-      axios.get(`${API_URL}/api/visualizar/${id}`)
+      const response = await axios.get(`${API_URL}/visualizar/${id}`);
         .then(response => {
           setImageUrls(response.data);
           setLoading(false);
